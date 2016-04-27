@@ -158,6 +158,34 @@ resolve: {
 
 ### Production vs. Dev Builds
 
+```bash
+webpack -p # minified
+```
+
+```bash
+# this module removes statements
+npm install --save-dev strip-loader
+```
+
+```js
+var devConfig = require('./webpack.config.js');
+var WebpackStrip = require('strip-loader');
+var stripLoader = {
+    test: [/\.js$/,/\.es6$/],
+    exclude: '/node_modules/',
+    // we are removing console.log statements
+    loader: WebpackStrip.loader('console.log')    
+};
+
+devConfig.module.loaders.push(stripLoader);
+
+module.exports = devConfig;
+```
+
+```bash
+webpack --config webpack-production.config.js -p
+```
+
 ## Advanced Builds
 ## Adding CSS
 ## Adding Images & Fonts to Your Build

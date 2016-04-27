@@ -56,16 +56,14 @@
 
 	document.write("Hello World!");
 
-	console.log('App loaded');
+
 
 /***/ },
 /* 2 */
 /***/ function(module, exports) {
 
 	let login = (username, password) => {
-	    if (username !== 'admin' || password !== 'radical') {
-	        console.log('incorret login');
-	    }
+	    if (username !== 'admin' || password !== 'radical') {}
 	};
 
 	login('admin', 'idunno');
@@ -75,7 +73,7 @@
 /***/ function(module, exports) {
 
 	// This is global JS provided to all apps.
-	console.log('logging from the utils.js file ...');
+
 
 /***/ }
 /******/ ]);
