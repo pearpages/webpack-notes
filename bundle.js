@@ -42,11 +42,40 @@
 /************************************************************************/
 /******/ ([
 /* 0 */
-/***/ function(module, exports) {
+/***/ function(module, exports, __webpack_require__) {
 
-	document.write("Welcome to Big Hair Concerts!");
+	__webpack_require__(1);
+	module.exports = __webpack_require__(3);
+
+
+/***/ },
+/* 1 */
+/***/ function(module, exports, __webpack_require__) {
+
+	__webpack_require__(2);
+
+	document.write("Hello World!");
 
 	console.log('App loaded');
+
+/***/ },
+/* 2 */
+/***/ function(module, exports) {
+
+	let login = (username, password) => {
+	    if (username !== 'admin' || password !== 'radical') {
+	        console.log('incorret login');
+	    }
+	};
+
+	login('admin', 'idunno');
+
+/***/ },
+/* 3 */
+/***/ function(module, exports) {
+
+	// This is global JS provided to all apps.
+	console.log('logging from the utils.js file ...');
 
 /***/ }
 /******/ ]);

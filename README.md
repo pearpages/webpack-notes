@@ -99,8 +99,6 @@ npm install --save-dev babel-core babel-loader
 }
 ```
 
-#### Linting
-
 #### ES6
 
 ```js
@@ -120,8 +118,34 @@ resolve: {
 }
 ```
 
-
 ### Using Preloaders
+
+#### JSHint
+
+```js
+// ...
+module: {
+    preLoaders: [
+        {
+            test: /\.js$/,
+            exclude: 'node_modules',
+            loader: 'jshint-loader'
+        }
+    ],
+    loaders : [
+        {
+            test: /\.es6$/,
+            exclude: /node_modules/,
+            loader: "babel-loader"
+        }
+    ]
+},
+
+resolve: {
+    extensions: ['', '.js', '.es6']
+}
+```
+
 ### Creating a Start Script
 ### Production vs. Dev Builds
 
