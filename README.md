@@ -85,6 +85,42 @@ module.exports = {
 ```
 
 ### Using Loaders
+
+e.g.
+
+```bash
+npm install --save-dev babel-core babel-loader
+```
+
+```json
+// .babelrc
+{
+    "presets": ["es2015"]
+}
+```
+
+#### Linting
+
+#### ES6
+
+```js
+// ...
+module: {
+    loaders : [
+        {
+            test: /\.es6$/,
+            exclude: /node_modules/,
+            loader: "babel-loader"
+        }
+    ]
+},
+
+resolve: {
+    extensions: ['', '.js', '.es6']
+}
+```
+
+
 ### Using Preloaders
 ### Creating a Start Script
 ### Production vs. Dev Builds
