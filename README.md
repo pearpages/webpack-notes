@@ -63,14 +63,27 @@ module.exports = {
     },
     watch: true
 };
+```
 
 #### Webpack Dev Server
 
 ```bash
 npm install webpack-dev-server -g
+webpack-dev-server --inline
 ```
 
 ### Building Multiple Files
+
+```javascript
+module.exports = {
+    entry:  ["./app.js","./utils.js"],
+    output: {
+        filename: "bundle.js"
+    },
+    watch: true
+};
+```
+
 ### Using Loaders
 ### Using Preloaders
 ### Creating a Start Script
