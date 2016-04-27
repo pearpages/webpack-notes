@@ -49,9 +49,27 @@ module.exports = {
 };
 ```
 
-
-
 ### Watch Mode and the Webpack Dev Server
+
+```bash
+webpack --watch
+```
+
+```javascript
+module.exports = {
+    entry: "./app.js",
+    output: {
+        filename: "bundle.js"
+    },
+    watch: true
+};
+
+#### Webpack Dev Server
+
+```bash
+npm install webpack-dev-server -g
+```
+
 ### Building Multiple Files
 ### Using Loaders
 ### Using Preloaders
