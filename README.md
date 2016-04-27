@@ -147,6 +147,15 @@ resolve: {
 ```
 
 ### Creating a Start Script
+
+```js
+// package.json
+  "scripts": {
+    "start": "webpack-dev-server",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+```
+
 ### Production vs. Dev Builds
 
 ## Advanced Builds

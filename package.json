@@ -4,6 +4,7 @@
   "description": "- Multiple Web Requests -> Combining Files\r - Code Size -> Minifying Files\r - File order Dependencies -> Maintaining File Order\r - Transpilation\r - Linting",
   "main": "app.js",
   "scripts": {
+    "start": "webpack-dev-server -w",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
