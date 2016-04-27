@@ -26,7 +26,31 @@ Can also combine css with the js.
 ## Basic Builds
 
 ### CLI Basics
+
+```bash
+npm install -g webpack
+```
+
+```bash
+# bundle.js is tye typical name
+webpack ./app.js bundle.js
+```
+
 ### Adding a config file
+
+```webpack.config.js``` it is a *CommonJS* module.
+
+```javascript
+module.exports = {
+    entry: "./app.js",
+    output: {
+        filename: "bundle.js"
+    }
+};
+```
+
+
+
 ### Watch Mode and the Webpack Dev Server
 ### Building Multiple Files
 ### Using Loaders
