@@ -190,6 +190,8 @@ webpack --config webpack-production.config.js -p
 
 ### Organizing Files and Folders
 
+Using the ```webpack-dev-server``` the files are virtually created.
+
 ```js
 var path = require('path'); // this module is part of node
 
