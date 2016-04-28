@@ -4,4 +4,5 @@ let login = (username, password) => {
     }
 };
 
-login('admin','idunno');
+// login('admin','idunno');
+export {login}

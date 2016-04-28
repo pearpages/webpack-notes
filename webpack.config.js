@@ -2,10 +2,10 @@ var path = require('path'); // this module is part of node
 
 module.exports = {
     context: path.resolve('js'), // the root
-    entry: ["./app.js","./utils.js"],
+    entry: ["./app","./utils"],
     output: {
         path: path.resolve('build/js/'),
-        publicPath: 'public/assets/js/',
+        publicPath: '/public/assets/js/',
         filename: "bundle.js"
     },
     devServer: {

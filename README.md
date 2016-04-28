@@ -212,7 +212,18 @@ module.exports = {
 ```
 
 ### Working with ES6 Modules
+
+Check the babel-loader config section above, plus the .babelrc file.
+
 ### Adding Source Maps
+
+```bash
+webpack -d
+webpack-dev-server -d
+```
+
+Then you can use the ```debugger;``` statement.
+
 ### Creating Multiple Bundles
 
 ## Adding CSS
