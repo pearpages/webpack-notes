@@ -224,7 +224,31 @@ webpack-dev-server -d
 
 Then you can use the ```debugger;``` statement.
 
-### Creating Multiple Bundles
+### Creating Multiple Bundles (e.g. laxy loading)
+
+```js
+var path = require('path'); // this module is part of node
+var webpack = require('webpack'); // <--
+
+var commonsPlugin = new webpack.optimize.CommonsChunkPlugin('shared.js'); // <--
+
+module.exports = {
+    context: path.resolve('js'), // the root
+    entry: { // <--
+        about: './about_page.js',
+        home: './home_page.js',
+        contact: './contact_page.js'
+    },
+    output: {
+        path: path.resolve('build/js/'),
+        publicPath: '/public/assets/js/',
+        filename: "[name].js" // <--
+    },
+    plugins: [commonsPlugin], // <--
+    
+    // ...
+};
+```
 
 ## Adding CSS
 ## Adding Images & Fonts to Your Build
