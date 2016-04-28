@@ -189,6 +189,26 @@ webpack --config webpack-production.config.js -p
 ## Advanced Builds
 
 ### Organizing Files and Folders
+
+```js
+var path = require('path'); // this module is part of node
+
+module.exports = {
+    context: path.resolve('js'), // the root
+    entry: ["./app.js","./utils.js"],
+    output: {
+        path: path.resolve('build/js/'),
+        publicPath: 'public/assets/js/', // <-- 
+        filename: "bundle.js"
+    },
+    devServer: {
+        contentBase: 'public' // <--
+    },
+   
+   // ..
+};
+```
+
 ### Working with ES6 Modules
 ### Adding Source Maps
 ### Creating Multiple Bundles
