@@ -254,6 +254,10 @@ module.exports = {
 
 ### CSS and Style Loaders
 
+```bash
+npm install css-loader style-loader --save-dev
+```
+
 ### Internal Implementation of CSS and Style Loaders
 
 ### Using SCSS and SASS
