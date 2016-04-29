@@ -487,6 +487,16 @@ module.exports = {
 ```
 
 ## Adding Images & Fonts to Your Build
+
+### Adding Images
+
+```bash
+npm install url-loader --save-dev
+```
+
+### Adding Fonts
+
+
 ## Webpack Tools
 ## Webpack and Front End Frameworks
 
