@@ -14,7 +14,7 @@ module.exports = {
     },
     watch: true,
     module: {
-       
+        
         loaders : [
             {
                 test: /\.es6$/,
@@ -26,10 +26,15 @@ module.exports = {
                 exclude: /node_modules/,
                 loader: "style-loader!css-loader"
             },
-             {
+            {
                 test: /\.woff($|\?)|\.woff2($|\?)|\.ttf($|\?)|\.eot($|\?)|\.svg($|\?)/,
                 loader: 'url-loader'
-             }
+            },
+            {
+                test: /\.scss$/,
+                exclude: /node_modules/,
+                loader: "style-loader!css-loader!sass-loader"
+            }
         ]
     },
     

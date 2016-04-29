@@ -478,8 +478,8 @@
 	if(false) {
 		// When the styles change, update the <style> tags
 		if(!content.locals) {
-			module.hot.accept("!!./../node_modules/css-loader/index.js!./app.css", function() {
-				var newContent = require("!!./../node_modules/css-loader/index.js!./app.css");
+			module.hot.accept("!!./../node_modules/css-loader/index.js!./../node_modules/sass-loader/index.js!./app.scss", function() {
+				var newContent = require("!!./../node_modules/css-loader/index.js!./../node_modules/sass-loader/index.js!./app.scss");
 				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 				update(newContent);
 			});
@@ -497,7 +497,7 @@
 
 
 	// module
-	exports.push([module.id, "body {\r\n    padding-top: 80px;\r\n}\r\n\r\n.navbar {\r\n    background-image: linear-gradient(to bottom, #007C0C 0, #000c0c 100%);\r\n}\r\n", ""]);
+	exports.push([module.id, ".navbar {\n  background-image: linear-gradient(to bottom, #007C0C 0, #000c0c 100%); }\n\nh1 {\n  padding: 15px;\n  border-color: red;\n  border-style: solid;\n  border-width: 1px; }\n", ""]);
 
 	// exports
 

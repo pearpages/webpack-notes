@@ -313,11 +313,62 @@ module.exports = {
 };
 ```
 
-### Internal Implementation of CSS and Style Loaders
-
 ### Using SCSS and SASS
 
+```bash
+npm install sass-loader node-sass --save-dev
+```
+
+```js
+var path = require('path'); // this module is part of node
+
+module.exports = {
+    context: path.resolve('js'), // the root
+    entry: ['./app'],
+    output: {
+        path: path.resolve('build/js/'),
+        publicPath: '/public/assets/js/',
+        filename: "bundle.js"
+    },
+    
+    devServer: {
+        contentBase: 'public'
+    },
+    watch: true,
+    module: {
+        
+        loaders : [
+            {
+                test: /\.es6$/,
+                exclude: /node_modules/,
+                loader: "babel-loader"
+            },
+            {
+                test: /\.css$/,
+                exclude: /node_modules/,
+                loader: "style-loader!css-loader"
+            },
+            {
+                test: /\.woff($|\?)|\.woff2($|\?)|\.ttf($|\?)|\.eot($|\?)|\.svg($|\?)/,
+                loader: 'url-loader'
+            },
+            {
+                test: /\.scss$/,
+                exclude: /node_modules/,
+                loader: "style-loader!css-loader!sass-loader"
+            }
+        ]
+    },
+    
+    resolve: {
+        extensions: ['', '.js', '.es6']
+    }
+};
+```
+
 ### Using LESS
+
+
 
 ### Creating Separate CSS Bundle
 
