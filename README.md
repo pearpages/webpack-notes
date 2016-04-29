@@ -255,7 +255,62 @@ module.exports = {
 ### CSS and Style Loaders
 
 ```bash
-npm install css-loader style-loader --save-dev
+npm install css-loader style-loader url-loader file-loader --save-dev
+```
+
+```js
+// require('./login');
+import {login} from "./login";
+import {} from "../css/bootstrap/css/bootstrap.css";
+import {} from "../css/app.css";
+
+login('admin','radical');
+
+document.write("Hello World!!!");
+
+console.log('App loaded');
+```
+
+```js
+var path = require('path'); // this module is part of node
+
+module.exports = {
+    context: path.resolve('js'), // the root
+    entry: ['./app'],
+    output: {
+        path: path.resolve('build/js/'),
+        publicPath: '/public/assets/js/',
+        filename: "bundle.js"
+    },
+    
+    devServer: {
+        contentBase: 'public'
+    },
+    watch: true,
+    module: {
+       
+        loaders : [
+            {
+                test: /\.es6$/,
+                exclude: /node_modules/,
+                loader: "babel-loader"
+            },
+            { // <-- for the css
+                test: /\.css$/,
+                exclude: /node_modules/,
+                loader: "style-loader!css-loader"
+            },
+             { // <-- for the fonts
+                test: /\.woff($|\?)|\.woff2($|\?)|\.ttf($|\?)|\.eot($|\?)|\.svg($|\?)/,
+                loader: 'url-loader'
+             }
+        ]
+    },
+    
+    resolve: {
+        extensions: ['', '.js', '.es6']
+    }
+};
 ```
 
 ### Internal Implementation of CSS and Style Loaders
