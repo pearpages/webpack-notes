@@ -368,7 +368,14 @@ module.exports = {
 
 ### Using LESS
 
-
+```js
+// in loaders section
+{
+    test: /\.less$/,
+    exclude: /node_modules/,
+    loader: "style-loader!css-loader!less-loader"
+}
+```
 
 ### Creating Separate CSS Bundle
 
