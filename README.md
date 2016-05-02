@@ -488,15 +488,78 @@ module.exports = {
 
 ## Adding Images & Fonts to Your Build
 
+We use the url-loader and play the limit parameter.
+
 ### Adding Images
+
+We require the image in the js or css.
 
 ```bash
 npm install url-loader --save-dev
 ```
 
+```js
+{
+    test: /.(png|jpg)$/,
+    exclude: '/node_modules/,
+    loader: 'url-loader?limit=10000' // bundles images below this size otherwize does a request for the image
+}
+```
+
 ### Adding Fonts
 
+```bash
+npm install url-loader --save-dev
+```
+
+```js
+{
+    test: /.(png|jpg|ttf|eot)$/,
+    exclude: '/node_modules/,
+    loader: 'url-loader?limit=10000' // bundles images below this size otherwize does a request for the image
+}
+```
 
 ## Webpack Tools
+
+### Connect Middleware
+
+#### Node
+
+- ejs : templating system (one fo them)
+- express: web framework
+- morgan: logger facility
+
+```js
+var webpackMiddleware = require('webpack-dev-middleware');
+var webpack = require('webpack');
+
+var config = require('./webpack.config');
+
+app.use(webpackMiddleware(webpack(config), {
+    publicPath: '/build',
+    headers: {'X-Custom-Webpack-Header': 'yes'},
+    stats: {
+        color: true
+    }
+}));
+```
+
+### Creating a custom loader
+
+The loader it's just a js module.
+
+```js
+loaders: [
+    {
+        test: /\.json$/,
+        exclude: /node_modules/,
+        loader: "path.resolve('loaders/strip')" // being strip the module we've created
+    }
+]
+```
+
+### Using plugins
+
 ## Webpack and Front End Frameworks
 
